@@ -29,13 +29,13 @@ Campus event and notice integration
 Emergency alerts & nearest hospital locator
 
 🖼️ Screenshots
- <p align="center"> <img width="1440" height="2960" alt="mapsnit onrender com_(Samsung Galaxy S8+)" src="https://github.com/user-attachments/assets/115a68db-0e6b-45dd-b94e-32278afb27ef" />
+ <p align="center"> <img width="390" height="844" alt="mapsnit onrender com_(Samsung Galaxy S8+)" src="https://github.com/user-attachments/assets/115a68db-0e6b-45dd-b94e-32278afb27ef" />
  <br/> <em>✨ Main screen on a mobile phone</em> </p>
- <p align="center"> <img width="1170" height="2532" alt="mapsnit onrender com_(iPhone 12 Pro)" src="https://github.com/user-attachments/assets/f020a4e4-61c0-46de-ae87-d26f5a5787ea" />
+ <p align="center"> <img width="390" height="844" alt="mapsnit onrender com_(iPhone 12 Pro)" src="https://github.com/user-attachments/assets/f020a4e4-61c0-46de-ae87-d26f5a5787ea" />
  <br/> <em>✨ All the buildings searchable</em> </p>
- <p align="center"> <img width="1170" height="2532" alt="mapsnit onrender com_(iPhone 12 Pro) (1)" src="https://github.com/user-attachments/assets/68011e49-ade1-4fab-a8c0-167810418915" />
+ <p align="center"> <img width="390" height="844" alt="mapsnit onrender com_(iPhone 12 Pro) (1)" src="https://github.com/user-attachments/assets/68011e49-ade1-4fab-a8c0-167810418915" />
  <br/> <em>✨ All buildings are intractable</em> </p>
- <p align="center"> <img width="1170" height="2532" alt="mapsnit onrender com_(iPhone 12 Pro) (2)" src="https://github.com/user-attachments/assets/04e15520-45b4-4e40-85e9-58dbd42035f2" />
+ <p align="center"> <img width="390" height="844" alt="mapsnit onrender com_(iPhone 12 Pro) (2)" src="https://github.com/user-attachments/assets/04e15520-45b4-4e40-85e9-58dbd42035f2" />
  <br/> <em>✨ Navigation demonstration</em> </p>
  <p align="center"> <img width="1920" height="1031" alt="mapsnit onrender com_" src="https://github.com/user-attachments/assets/2522f036-dd9c-42ba-901e-51467484d9d9" />
  <br/> <em>✨ Desktop Version</em> </p>
