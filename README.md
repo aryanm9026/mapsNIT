@@ -1,7 +1,8 @@
 🗺️ mapsNIT
-<p align="center"> <img src="assets/logo.png" alt="mapsNIT Logo" width="200"/> </p>
+<p align="center"> <img src="https://github.com/user-attachments/assets/8be66407-36a0-4cb5-897e-372207ee3b10" alt="mapsNIT Logo" width="200"/> </p>
 
 "Ever felt like navigating a 300-acre campus is like solving a maze?"
+
 Welcome to mapsNIT – your personal guide to MNIT Jaipur. Whether you’re a fresher, senior, faculty member, or visitor, this project makes navigating the campus effortless.
 
 Try now : https://mapsnit.onrender.com
