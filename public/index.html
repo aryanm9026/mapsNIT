@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Welcome - MapsNIT</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" type="image/png" href="./imgs//app-icon.png">
+  <meta name="theme-color" content="#f5deb3">
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-pulse-icon/dist/L.Icon.Pulse.css" />
+  <script src="https://unpkg.com/leaflet-pulse-icon/dist/L.Icon.Pulse.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="heading">
+      <img src="./imgs/Mnit_logo.png" />
+      <div class="headsContainer">
+        <p class="heads1">
+          mapsNIT
+        </p>
+        <p class="heads2">Made with &#x1F49B by 3devs<br>Students of MNIT Jaipur</p>
+      </div>
+    </div>
+
+
+    <div id="search-container">
+      <div class="InputContainer">
+        <input placeholder="Search inside MNIT..." id="search-box" class="input" name="text" type="text" />
+      </div>
+
+      <!-- Suggestions list -->
+      <ul id="suggestions"></ul>
+
+      <!-- Speed display -->
+      <!-- <div id="speed">0 m/s</div> -->
+    </div>
+
+
+    <div class="head-btns">
+      <div>
+        <button type="button" onclick=openModal() class="coffee-btn">Buy me a Coffee</button>
+
+        <button onclick="locateUser()" class="btn-donate">Locate Me</button>
+      </div>
+    </div>
+
+
+  </header>
+  <main>
+    <div id="intro-screen">
+      <img src="./imgs//Mnit_logo.png" alt="Logo">
+      <h2>Welcome to <span id="m">M</span><span id="chng">aps</span>NIT</h2>
+      </h2>
+      <p>Made with 💛 by 3Devs</p>
+    </div>
+
+    <div id="featuresModol" class="modol">
+      <div class="modol-content" id="modolContent">
+        <span class="close-modol" id="closeModol">&times;</span>
+        <h2>!! We are still under development phase !!</h2>
+        <h2>Upcoming Features</h2>
+        <ul>
+          <li>🐆 <strong>Nearest Leopard Sightings</strong> - Real-time safety alerts for campus</li>
+          <li>🏛 <strong>Internal Department Maps</strong> - Detailed floor-wise navigation</li>
+          <li>🏛 <strong>Shuttle Service</strong> - Detailed about location of incampus transport</li>
+          <li>💡 <strong>Tip Landmark</strong> - Campus shortcuts and survival hacks</li>
+          <li>🌐 <strong>Useful College Websites</strong> - Quick access to important portals</li>
+          <li>🍴 <strong>Best Places to Eat in Jaipur</strong> - Student budget-friendly recommendations</li>
+          <li>🎓 <strong>MNIT Life Hacks</strong> - Make your college life easier and smarter</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="map">
+      <div id="speed-container">
+        <div id="speed">0 Km/hr</div>
+      </div>
+
+      <div class="timecontainer">
+        <div class="time"></div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+      <div class="modal">
+        <div class="modal-header">
+          <div class="header-section team-intro">
+            <h2 class="modal-title">3DEVS</h2>
+            <p class="team-description">
+              Hey! We are <strong>3DEVS</strong>, three passionate students from National Institute of Technology,
+              Jaipur (MNIT Jaipur). Our mission is to solve real-world problems using our coding expertise and
+              innovative thinking.
+            </p>
+            <div class="team-members">
+              <a href="https://www.linkedin.com/in/aryanmishra9026/" class="member-link">Aryan Mishra</a>
+              <a href="https://www.linkedin.com/in/aryanmishra9026/" class="member-link">Lucky Agrawal</a>
+              <a href="https://www.linkedin.com/in/aryanmishra9026/" class="member-link">Sushobhit</a>
+            </div>
+          </div>
+
+          <div class="header-section support-section">
+            <div class="support-title">
+              <button class="close-button" onclick="closeModal()">×</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <p class="qr-description">Scan the QR code below to contribute and help us build amazing products</p>
+
+          <div class="qr-container">
+            <div class="qr-placeholder">
+              <small><img src="./imgs//qrcode.png" alt="" srcset="" style="
+    width: 100%;
+    height: 100%;
+"></small>
+            </div>
+          </div>
+
+          <div class="donation-info">
+            <div class="donation-title">💡 Why Support Us?</div>
+            <div class="donation-text">
+              Your contributions help us develop innovative solutions, maintain our projects, and create tools that
+              benefit the community. Every donation makes a difference!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+
+    <div class="focus-mask" id="focusMask"></div>
+
+    <div id="buildingModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal">&times;</span>
+        <h2 id="buildingName"></h2>
+
+        <div id="floorSwitcher"></div>
+
+        <div id="indoorMap" style="height: 500px; margin-top: 10px"></div>
+      </div>
+    </div>
+
+    <a href="https://forms.gle/WpTEunud7i47ZU6y8" class="feedback-btn">
+      Feedback
+    </a>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/poiData.js"></script>
+  <script src="js/iconSet.js"></script>
+  <script src="js/internalinfo.js"></script>
+  <script src="js/internals.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/Cluster.js"></script>
+
+</body>
+
+</html>

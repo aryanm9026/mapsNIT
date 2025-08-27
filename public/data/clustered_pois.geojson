@@ -1,0 +1,752 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.81165784999999,
+          26.8627646
+        ]
+      },
+      "properties": {
+        "name": "ECE Department",
+        "category": "Departments",
+        "poi_count": 3,
+        "merged_pois": [
+          "ECE department",
+          "Electronics and Communication Department",
+          "Electronics Lab (ECE LAB)"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8116227,
+          26.8625618
+        ]
+      },
+      "properties": {
+        "name": "Physics Department",
+        "category": "Departments",
+        "poi_count": 1,
+        "merged_pois": [
+          "Modern Physics Lab --I"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8105471,
+          26.8631305
+        ]
+      },
+      "properties": {
+        "name": "Central Canteen",
+        "category": "Cafes",
+        "poi_count": 1,
+        "merged_pois": [
+          "Central Canteen"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8105615,
+          26.86387435
+        ]
+      },
+      "properties": {
+        "name": "Prabha Bhavan",
+        "poi_count": 7,
+        "merged_pois": [
+          "Prabha Bhawan",
+          "Post Office",
+          "State Bank Of India (SBI BANK)",
+          "Dean Academics ",
+          "ICICI BANK ",
+          "Computer Centre (CC)",
+          "Dean Student Welfare (DSW)"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8200818,
+          26.8621487
+        ]
+      },
+      "properties": {
+        "name": "AUROBINDO (H-10)",
+        
+        "category": "Hostels",
+        "poi_count": 1,
+        "merged_pois": [
+          "H-9 ( Aurobindo Hostel )"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.81006215,
+          26.862285900000003
+        ]
+      },
+      "properties": {
+        "name": "Metallurgy Department",
+        "category": "Departments",
+        "poi_count": 4,
+        "merged_pois": [
+          "Metallurgical and Materials Engineering Department",
+          "Materials Testing Lab",
+          "Department of Metallurgy and Physics",
+          "Physics Lab -- 2"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8107493,
+          26.8608864
+        ]
+      },
+      "properties": {
+        "name": "Mechanical Department/Workshop",
+        "category": "Departments",
+        "poi_count": 1,
+        "merged_pois": [
+          "Product Realization through Manufacturing (PRTM LAB)"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8123319,
+          26.8620552
+        ]
+      },
+      "properties": {
+        "name": "Guard Headquaters / ICCI ATM",
+        "poi_count": 1,
+        "merged_pois": [
+          "ICICI ATM"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8135752,
+          26.8620014
+        ]
+      },
+      "properties": {
+        "name": "Badminton Court 1 ",
+        "poi_count": 1,
+        "merged_pois": [
+          "Badminton Court"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8127945,
+          26.8617408
+        ]
+      },
+      "properties": {
+        "name": "OAT Back Ground",
+        "poi_count": 1,
+        "merged_pois": [
+          "OAT Back Ground"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.81381504999999,
+          26.86172595
+        ]
+      },
+      "properties": {
+        "name": "Vollyball Court",
+        "poi_count": 2,
+        "merged_pois": [
+          "Volleyball Court",
+          "Sports Complex Gate"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8135672,
+          26.8618204
+        ]
+      },
+      "properties": {
+        "name": "Sports Complex",
+        "poi_count": 1,
+        "merged_pois": [
+          "Sports Complex"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8131245,
+          26.8618729
+        ]
+      },
+      "properties": {
+        "name": "Kho Kho / Kushti Ground",
+        "poi_count": 1,
+        "merged_pois": [
+          "KHO-KHO Ground"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8129067,
+          26.8644176
+        ]
+      },
+      "properties": {
+        "name": "PMC",
+        "poi_count": 1,
+        "merged_pois": [
+          "PMC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8130828,
+          26.8645596
+        ]
+      },
+      "properties": {
+        "name": "MNIT Cycle repair",
+        "poi_count": 1,
+        "merged_pois": [
+          "Cycle Repair"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8113891,
+          26.861402
+        ]
+      },
+      "properties": {
+        "name": "New Chemical Department",
+        "category": "Departments",
+        "poi_count": 1,
+        "merged_pois": [
+          "Chemical Department New"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.81790565,
+          26.8598839
+        ]
+      },
+      "properties": {
+        "name": "H-4 Lohit Hostel",
+        "category": "Hostels",
+        "poi_count": 2,
+        "merged_pois": [
+          "Night canteen (boys)",
+          "Night Canteen"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8173379,
+          26.8608893
+        ]
+      },
+      "properties": {
+        "name": "Loondry",
+        "poi_count": 1,
+        "merged_pois": [
+          "Loondry"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.815605,
+          26.8606404
+        ]
+      },
+      "properties": {
+        "name": "H-3 Satpura Hostel",
+        "category": "Hostels",
+        "poi_count": 1,
+        "merged_pois": [
+          "H-3 (Satpura Hostel)"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8147837,
+          26.8603438
+        ]
+      },
+      "properties": {
+        "name": "Tennis Court",
+        "poi_count": 1,
+        "merged_pois": [
+          "Tennis court"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8147902,
+          26.8600852
+        ]
+      },
+      "properties": {
+        "name": "Football Ground",
+        "poi_count": 1,
+        "merged_pois": [
+          "FootBall Ground"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8143569,
+          26.8593604
+        ]
+      },
+      "properties": {
+        "name": "Running Ground",
+        "poi_count": 1,
+        "merged_pois": [
+          "Box Cricket"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.81446225,
+          26.862980999999998
+        ]
+      },
+      "properties": {
+        "name": "VLTC",
+        "poi_count": 3,
+        "merged_pois": [
+          "Mathematics department",
+          "UG Registration "
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8091911,
+          26.8604912
+        ]
+      },
+      "properties": {
+        "name": "Disaster Management/National Earthquake Detection Facility",
+        "poi_count": 1,
+        "merged_pois": [
+          "Earthquake Detection Center"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8106928,
+          26.8602402
+        ]
+      },
+      "properties": {
+        "name": "Central Store and Vehical Garage",
+        "poi_count": 1,
+        "merged_pois": [
+          "Central Store and Garage"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.81098845,
+          26.85929665
+        ]
+      },
+      "properties": {
+        "name": "Physics Faculity Offices",
+        "poi_count": 3,
+        "merged_pois": [
+          "Senior Technician",
+          "EEEC LAB",
+          "Sustainable Energy Materials and System Laboratory"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.81073615,
+          26.8616652
+        ]
+      },
+      "properties": {
+        "name": "Metallurgy Workshop",
+        "poi_count": 3,
+        "merged_pois": [
+          "FFR Lab",
+          "Foundary Technology",
+          "Mineral Processing Lab"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8100113,
+          26.8648195
+        ]
+      },
+      "properties": {
+        "name": "Rose Garden",
+        "poi_count": 1,
+        "merged_pois": [
+          "Rose Garden "
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8079039,
+          26.86504505
+        ]
+      },
+      "properties": {
+        "name": "Main Gate Area (Under Construction)",
+        "poi_count": 2,
+        "merged_pois": [
+          "Main Gate",
+          "Point 27"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8153833,
+          26.8619613
+        ]
+      },
+      "properties": {
+        "name": "Box Cricket ",
+        "poi_count": 1,
+        "merged_pois": [
+          "Box Cricket"
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8193734,26.8604325,0]
+      },
+      "properties": {
+        "name": "Hostel Varun (H8)",
+        "category": "Hostels",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8183271,26.8597372,0]
+      },
+      "properties": {
+        "name": "H-7 (Drona Hostel)",
+        "category": "Hostels",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8193854,26.8605447,0]
+      },
+      "properties": {
+        "name": "H-6( Kabir Hostel)",
+        "category": "Hostels",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8205603,26.8604214,0]
+      },
+      "properties": {
+        "name": "H-15 ( Aravali Hostel )",
+        "category": "Hostels",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8160122,26.8618665,0]
+      },
+      "properties": {
+        "name": "H-2 (Chaitanya Hostel)",
+        "category": "Hostels",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.816019,26.8623556,0]
+      },
+      "properties": {
+        "name": "H-1 (Parijat Hostel)",
+        "category": "Hostels",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8156339,26.86309,0]
+      },
+      "properties": {
+        "name": "H-10 (Kailash Hostel for PG)",
+        "category": "Hostels",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8159342,26.8620473,0]
+      },
+      "properties": {
+        "name": "Hostel Office (Boys)",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8155781,26.8636959,0]
+      },
+      "properties": {
+        "name": "H-14 (Vinodini Hostel)",
+        "category": "Hostels",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8179948,26.8655891,0]
+      },
+      "properties": {
+        "name": "Acharya Bhawan",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8229561,26.8625295,0]
+      },
+      "properties": {
+        "name": "Service Gate",
+        "category": "Gate",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8104998,26.8588652,0]
+      },
+      "properties": {
+        "name": "Dean's Gate",
+        "category": "Gate",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8168452,26.8569032,0]
+      },
+      "properties": {
+        "name": "Back Gate",
+        "category": "Gate",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8077545,26.8650752,0]
+      },
+      "properties": {
+        "name": "Main Gate",
+        "category": "Gate",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    },{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.8106799,26.8671088,0]
+      },
+      "properties": {
+        "name": "Staff Gate",
+        "category": "Gate",
+        "poi_count": 1,
+        "merged_pois": [
+          ""
+        ]
+      }
+    }
+  ]
+}
