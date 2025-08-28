@@ -14,11 +14,23 @@ Try now : https://mapsnit.onrender.com
 🚀 Features
 ✅ Core Features (Current)
 
-(👉 Add your main working features here – e.g., search labs by course code, locate professor offices, find shortcuts, etc.)
+- Pan Campus live location.
+- Navigation to any place pan campus.
+- Building searchability (All labs, prof offices, administration buildings, hostels and shops marked) 
+- Nearest water cooler searchable.
+- In building maps and much more. (Beta stage)
+- Current Location button.
+- Hard to find spots marked (like girl's parlour, mandir, boys salon, etc.)
+- Extra zoom ability (Focus mode)
+- and many more...👀 (dhundho dhundho)
 
 🔮 Planned / Future Enhancements
 
-Real-time location tracking with GPS
+Leopard siting alerts and area highlights.
+
+Oncampus vehicle service live location.
+
+Year-Semester wise timetable integration.
 
 In-building maps (labs, classrooms, offices)
 
