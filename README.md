@@ -26,19 +26,21 @@ Try now : https://mapsnit.onrender.com
 
 🔮 Planned / Future Enhancements
 
-Leopard siting alerts and area highlights.
+- Leopard siting alerts and area highlights.
 
-Oncampus vehicle service live location.
+- Oncampus vehicle service live location.
 
-Year-Semester wise timetable integration.
+- Online order platform for central canteen integration 🔥
 
-In-building maps (labs, classrooms, offices)
+- Year-Semester wise timetable integration.
 
-Smart recommendations for food & hangout spots
+- In-building maps (labs, classrooms, offices)
 
-Campus event and notice integration
+- Smart recommendations for food & hangout spots
 
-Emergency alerts & nearest hospital locator
+- Campus event and notice integration
+
+- Emergency alerts & nearest hospital locator
 
 🖼️ Screenshots
  <p align="center"> <img width="390" height="844" alt="mapsnit onrender com_(Samsung Galaxy S8+)" src="https://github.com/user-attachments/assets/115a68db-0e6b-45dd-b94e-32278afb27ef" />
