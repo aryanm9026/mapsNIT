@@ -101,9 +101,9 @@ Now open 👉 http://localhost:3000
 # 👨‍💻 Contributors
 
 Built with ❤️ by 3DEVS (Students of Malaviya National Institute of Technology (MNIT), Jaipur)
-- Aryan Mishra
-- Lucky Agrawal
-- Sushobhit
+- <a href="https://www.linkedin.com/in/aryanmishra9026/" class="member-link">Aryan Mishra</a>
+- <a href="https://www.linkedin.com/in/lucky-agrawal-397b50179/" class="member-link">Lucky Agrawal</a>
+- <a href="https://www.linkedin.com/in/sushobhit-katiyar-b393712a7/" class="member-link">Sushobhit</a>
 
 ## Status
 
