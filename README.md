@@ -1,4 +1,4 @@
-🗺️ mapsNIT
+🗺️ mapsNIT (Currently only for Android)
 <p align="center"> <img src="https://github.com/user-attachments/assets/8be66407-36a0-4cb5-897e-372207ee3b10" alt="mapsNIT Logo" width="200"/> </p>
 
 "Ever felt like navigating a 300-acre campus is like solving a maze?"
