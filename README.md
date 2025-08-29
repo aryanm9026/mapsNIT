@@ -73,6 +73,8 @@ Leaflet.js
 Dijkstra’s Algorithm
  – shortest path finding
 
+QGIS software
+
 Turf.js
  – geospatial analysis
 
