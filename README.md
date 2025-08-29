@@ -86,7 +86,7 @@ Google Maps Design Services & more
 Run mapsNIT locally in just 3 steps 🚀
 
 ## 1. Clone the repository
-git clone https://github.com/your-username/mapsNIT.git <br>
+git clone https://github.com/aryanm9026/mapsNIT.git <br>
 cd mapsNIT
 
 ## 2. Install dependencies
