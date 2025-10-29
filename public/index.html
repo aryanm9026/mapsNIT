@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="icon" type="image/png" href="./imgs//app-icon.png">
+  <link rel="icon" type="image/png" href="./imgs//temp_sphinx_logo.png">
   <meta name="theme-color" content="#f5deb3">
 
 
@@ -25,6 +25,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
   <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
   <script defer data-domain="mapsnit.onrender.com" src="https://plausible.io/js/script.js"></script>
 </head>
@@ -32,12 +36,12 @@
 <body>
   <header>
     <div class="heading">
-      <img src="./imgs/Mnit_logo.png" />
+      <img src="./imgs/temp_sphinx_logo.png" />
       <div class="headsContainer">
         <p class="heads1">
           mapsNIT
         </p>
-        <p class="heads2">Made with &#x1F49B by 3devs<br>Students of MNIT Jaipur</p>
+        <p class="heads2">v1.1<br>( Sphinx Edition ) By 3DEVS</p>
       </div>
     </div>
 
@@ -47,18 +51,12 @@
         <input placeholder="Search inside MNIT..." id="search-box" class="input" name="text" type="text" />
       </div>
 
-      <!-- Suggestions list -->
       <ul id="suggestions"></ul>
-
-      <!-- Speed display -->
-      <!-- <div id="speed">0 m/s</div> -->
     </div>
 
 
     <div class="head-btns">
       <div>
-        <button type="button" onclick=openModal() class="coffee-btn">Buy me a Coffee</button>
-
         <button onclick="locateUser()" class="btn-donate">Locate Me</button>
       </div>
     </div>
@@ -67,7 +65,7 @@
   </header>
   <main>
     <div id="intro-screen">
-      <img src="./imgs//Mnit_logo.png" alt="Logo">
+      <img src="./imgs/temp_sphinx_logo.png" alt="Logo">
       <h2>Welcome to <span id="m">M</span><span id="chng">aps</span>NIT</h2>
       </h2>
       <p>Made with 💛 by 3Devs</p>
