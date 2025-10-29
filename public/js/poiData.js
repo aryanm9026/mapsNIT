@@ -835,7 +835,7 @@ const poiList = [
   },
   {
     name: "Aeroquest",
-    coords: [26.8619364, 75.8118249],
+    coords: [26.8617408, 75.8127945],
     category: "",
     description: "OAT GROUND",
     timings: "11AM, 8NOV",
