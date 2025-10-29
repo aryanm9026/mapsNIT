@@ -27,6 +27,13 @@
 
   <link rel="stylesheet" href="style.css" />
   <script defer data-domain="mapsnit.onrender.com" src="https://plausible.io/js/script.js"></script>
+  <!-- sphinnx-update -->
+   <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Import Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -176,6 +183,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/sphinx_events.js"></script>
   <script src="js/poiData.js"></script>
   <script src="js/iconSet.js"></script>
   <script src="js/internalinfo.js"></script>
@@ -183,6 +191,28 @@
   <script src="js/main.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/Cluster.js"></script>
+
+  <!-- SPHINX '25 Today's Events Modal -->
+<div id="events-modal" class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm flex items-center justify-center p-4 hidden" style="z-index: 1400;">
+    <div class="modal-fade-in bg-gray-900 rounded-lg shadow-2xl w-full max-w-md border border-amber-500">
+        <!-- Modal Header -->
+        <div class="flex justify-between items-center p-5 border-b border-gray-700">
+            <h2 class="text-2xl font-semibold text-amber-400">Today's Events</h2>
+            <button id="close-modal-btn" class="text-gray-400 hover:text-white transition-colors rounded-full p-1 hover:bg-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Modal Body: Event List -->
+        <div class="p-5">
+            <ul id="events-list" class="space-y-3 max-h-80 overflow-y-auto">
+                <!-- Events will be inserted here by JavaScript -->
+            </ul>
+            <!-- This message shows if no events are found -->
+            <p id="no-events-msg" class="text-gray-400 text-center hidden">No events scheduled for today.</p>
+        </div>
+    </div>
+</div>
 
 </body>
 
