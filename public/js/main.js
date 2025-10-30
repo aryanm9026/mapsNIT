@@ -389,12 +389,9 @@ function getEventDateString(dateObj) {
             modal.classList.remove('hidden');
         }
 
-        // --- Setup Listeners and Run ---
 
         document.addEventListener('DOMContentLoaded', () => {
-            // --- This is where we get today's date ---
-            // By default, this uses the actual current date.
-            let dateToCheck = new Date();
+            let dateToCheck = new Date("November 8, 2025");
 
             // *** FOR TESTING ***
             // Since the event is in November, uncomment one of these lines to test the popup:
