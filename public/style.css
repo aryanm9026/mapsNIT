@@ -494,6 +494,33 @@ header img {
   transform: translateY(0);
 }
 
+
+.popup-btn {
+  background: linear-gradient(135deg, #05eb20, #2196f3);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
+}
+
+.popup-btn:hover {
+  background: linear-gradient(135deg, #2980b9, #1976d2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.popup-btn:active {
+  transform: translateY(0);
+}
+
+
+
 /* Custom marker styles */
 .custom-marker {
   background: none;

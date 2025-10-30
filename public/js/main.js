@@ -107,6 +107,9 @@ Promise.all([
           }, ${layer.getBounds().getCenter().lat}])">
             Navigate
           </button>
+          <button class="popup-btn" onclick="openBuildingMap('${feature.properties.id}', '${feature.properties.name}')">
+      Open Internal Map
+    </button>
         </div>
       `);
       layer.on("click", () => {
@@ -114,7 +117,7 @@ Promise.all([
       const buildingName = feature.properties.name || "Building";
       buildingToOpen = { id: buildingId, name: buildingName };
       confirmBuildingName.innerText = buildingName;
-      confirmModal.style.display = "flex";
+      confirmModal.style.display = "none";
         document.getElementById("confirmBtnYes").addEventListener("click",(e)=>{
                     if (feature.properties.id && feature.properties.name) {
                     openBuildingMap(feature.properties.id, feature.properties.name);
