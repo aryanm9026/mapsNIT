@@ -39,7 +39,30 @@ let clusteredPOIs, detailedPOIs;
 let activeRoute = null;
 let pathNetwork = null;
 let routingGraph = null;
+// --- Confirmation Modal Logic ---
+// We get the elements ONCE, at the start.
+let buildingToOpen = null;
+const confirmModal = document.getElementById("confirmModal");
+const confirmBtnYes = document.getElementById("confirmBtnYes");
+const confirmBtnNo = document.getElementById("confirmBtnNo");
+const confirmBuildingName = document.getElementById("confirmBuildingName");
 
+// We set the "Yes" click listener ONCE.
+confirmBtnYes.onclick = () => {
+  if (buildingToOpen) {
+    // This function is in your internal.js file
+    openBuildingMap(buildingToOpen.id, buildingToOpen.name);
+  }
+  confirmModal.style.display = "none"; // Hide confirmation modal
+  buildingToOpen = null;
+};
+
+// We set the "No" click listener ONCE.
+confirmBtnNo.onclick = () => {
+  confirmModal.style.display = "none"; // Hide confirmation modal
+  buildingToOpen = null;
+};
+// --- End of Confirmation Modal Logic ---F
 // --- All GeoJSON data ---
 Promise.all([
   fetch("/data/campus_boundary.geojson").then((res) => res.json()),
@@ -86,10 +109,20 @@ Promise.all([
           </button>
         </div>
       `);
-      layer.on("dblclick", () => {
-        if (feature.properties.id && feature.properties.name) {
-          openBuildingMap(feature.properties.id, feature.properties.name);
+      layer.on("click", () => {
+       const buildingId = feature.properties.id;
+      const buildingName = feature.properties.name || "Building";
+      buildingToOpen = { id: buildingId, name: buildingName };
+      confirmBuildingName.innerText = buildingName;
+      confirmModal.style.display = "flex";
+        document.getElementById("confirmBtnYes").addEventListener("click",(e)=>{
+                    if (feature.properties.id && feature.properties.name) {
+                    openBuildingMap(feature.properties.id, feature.properties.name);
+                    document.getElementById("confirmModal").style.display = "none"
+
         }
+        })
+
       });
     },
   }).addTo(map);

@@ -1171,3 +1171,66 @@ header {
             background: linear-gradient(45deg, #3498db, #2980b9);
             border-radius: 10px;
         }
+        .leaflet-popup-pane {
+  /*
+    This forces the white popup box to appear
+    ABOVE your header (which is z-index 1200).
+  */
+  z-index: 1500 !important;
+}
+
+#buildingModal {
+  /*
+    This makes sure your internal map modal appears
+    on top of absolutely everything else.
+  */
+  z-index: 200001 !important;
+}
+/* PASTE THIS AT THE END OF style.css */
+
+.confirm-modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10000; /* On top of map, but under the map modal */
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9);
+  animation: scaleIn 0.2s forwards;
+}
+
+.confirm-modal-content h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.confirm-modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+#confirmBtnYes {
+  background: #2196f3;
+  color: white;
+}
+
+#confirmBtnNo {
+  background: #f0f0f0;
+  color: #333;
+}
