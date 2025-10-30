@@ -333,3 +333,95 @@ document.querySelectorAll(".btn, .member-link, .social-link").forEach((el) => {
     setTimeout(() => ripple.remove(), 600);
   });
 });
+
+
+// sphinx-events
+function getEventDateString(dateObj) {
+        }
+
+        /**
+         * Finds all events scheduled for a specific date.
+         */
+        function findEventsForDate(dateString) {
+            return extractedEvents.filter(event => event.dates.includes(dateString));
+        }
+
+        /**
+         * Creates and shows the popup modal with the list of events.
+         */
+        function showEventsPopup(events) {
+            const modal = document.getElementById('events-modal');
+            const eventListElement = document.getElementById('events-list');
+            const noEventsMessage = document.getElementById('no-events-msg');
+
+            dateToCheck = new Date(); // To see the "No events" message
+
+            if (!modal || !eventListElement || !noEventsMessage) {
+                console.error("Modal elements not found!");
+                return;
+            }
+
+            // Clear any old event items
+            eventListElement.innerHTML = '';
+
+            if (events.length === 0) {
+                // No events, show the "no events" message
+                eventListElement.classList.add('hidden');
+                noEventsMessage.classList.remove('hidden');
+            } else {
+                // We have events, hide the "no events" message
+                eventListElement.classList.remove('hidden');
+                noEventsMessage.classList.add('hidden');
+
+                // Create and add each event to the list
+                events.forEach(event => {
+                    const li = document.createElement('li');
+                    li.className = 'bg-gray-800 p-4 rounded-lg shadow-md'; // Updated bg
+                    li.innerHTML = `
+                        <h3 class="font-bold text-lg text-amber-400">${event.eventName}</h3> <!-- Updated text color -->
+                        <p class="text-sm text-gray-300">Venue: ${event.venue}</p>
+                    `;
+                    eventListElement.appendChild(li);
+                });
+            }
+
+            // Show the modal
+            modal.classList.remove('hidden');
+        }
+
+        // --- Setup Listeners and Run ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- This is where we get today's date ---
+            // By default, this uses the actual current date.
+            let dateToCheck = new Date();
+
+            // *** FOR TESTING ***
+            // Since the event is in November, uncomment one of these lines to test the popup:
+            // dateToCheck = new Date("November 7, 2025"); // To see events for 7NOV
+            // dateToCheck = new Date("November 8, 2025"); // To see events for 8NOV
+            console.log(dateToCheck);
+            const todayString = getEventDateString(dateToCheck);
+            const todaysEvents = findEventsForDate(todayString);
+
+            // Show the popup
+            // We'll show it even if there are no events, so the user sees the "No events" message.
+            showEventsPopup(todaysEvents);
+
+            // Add click listener for the close button
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const modal = document.getElementById('events-modal');
+
+            if(closeModalBtn && modal) {
+                closeModalBtn.addEventListener('click', () => {
+                    modal.classList.add('hidden');
+                });
+                
+                // Optional: Close modal by clicking on the dark background
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.add('hidden');
+                    }
+                });
+            }
+        });

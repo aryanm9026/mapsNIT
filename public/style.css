@@ -873,7 +873,7 @@ header {
     transform: translateX(-50%);
     z-index: 1000;
     height: fit-content;
-    top: 80% !important;
+    top: 70% !important;
     width: 90%;
   }
 
