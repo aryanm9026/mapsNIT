@@ -1,4 +1,4 @@
-const poiList = [
+var poiList = [
   {
     name: "OAT Back Ground",
     coords: [26.8617408, 75.8127945],

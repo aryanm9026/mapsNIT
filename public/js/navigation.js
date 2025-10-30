@@ -45,7 +45,44 @@ function buildRoutingGraph(geojson) {
 
   routingGraph = { graph, nodes };
 }
+/**
+ * Finds the nearest POI from the global 'poiList' array.
+ * (Assumes 'poiList' is loaded from poiList.js)
+ * * @param {number} userLat - User's latitude
+ * @param {number} userLng - User's longitude
+ * @returns {object|null} The nearest POI object, or null if not found.
+ */
+function findNearestPoi(userLat, userLng) {
+  // Ensure poiList is loaded and is an array
+  if (!window.poiList || !Array.isArray(window.poiList) || window.poiList.length === 0) {
+    console.error("poiList is not loaded or is empty. Check poiList.js.");
+    return null;
+  }
 
+  let nearestPoi = null;
+  let minDistance = Infinity; // Start with a very large distance
+
+  const userLatLng = L.latLng(userLat, userLng);
+
+  // Loop through every POI in your list
+  for (const poi of window.poiList) {
+    // Make sure the POI has valid coordinates
+    if (poi.lat && poi.lng) {
+      const poiLatLng = L.latLng(poi.lat, poi.lng);
+      
+      // Use Leaflet's built-in distance calculator (returns meters)
+      const distance = userLatLng.distanceTo(poiLatLng);
+
+      // If this POI is closer than the current 'minDistance', update it
+      if (distance < minDistance) {
+        minDistance = distance;
+        nearestPoi = poi;
+      }
+    }
+  }
+
+  return nearestPoi;
+}
 function calculateDistance(coord1, coord2) {
   const R = 6371000;
   const lat1 = (coord1[1] * Math.PI) / 180;
