@@ -52,21 +52,21 @@ body {
   animation: fadeIn 2s ease;
 }
 #m {
-            display: inline-block;
-            transition: transform 1.5s ease;
-            padding-left: 10px;
-        }
+  display: inline-block;
+  transition: transform 1.5s ease;
+  padding-left: 10px;
+}
 
-        #chng {
-            display: inline-block;
-            max-width: 0;
-            overflow: hidden;
-            position: relative;
-    top: 7px;
-    right: 8px;
-            white-space: nowrap;
-            transition: max-width 1.5s ease;
-        }
+#chng {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  position: relative;
+  top: 7px;
+  right: 8px;
+  white-space: nowrap;
+  transition: max-width 1.5s ease;
+}
 
 @keyframes fadeIn {
   from {
@@ -77,15 +77,13 @@ body {
   }
 }
 
-.modol{
+.modol {
   display: none;
 }
 
-.modol.show{
+.modol.show {
   display: block;
 }
-
-
 
 header {
   height: 26%;
@@ -98,9 +96,10 @@ header {
 }
 
 header img {
-  width: 65px;
-  height: 65px;
+  width: 100px;
+  height: 100px;
   padding: 15px;
+  padding-bottom: 50px;
 }
 
 #map {
@@ -152,7 +151,7 @@ header img {
   transform: translateX(-50%);
   z-index: 1000;
   height: fit-content;
-  top: 45%;
+  top: 50%;
   width: 90%;
 }
 
@@ -162,12 +161,8 @@ header img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    to bottom,
-    rgb(227, 213, 255),
-    rgb(255, 231, 231)
-  );
-  border-radius: 30px;
+  background: linear-gradient(to bottom, #fbee99, rgb(255 163 85));
+  border-radius: 10px;
   overflow: hidden;
   cursor: text;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
@@ -240,14 +235,14 @@ header img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #2581fa, #3698ff);
+  background: radial-gradient(circle at 30% 30%, #ffc000, #da9500);
   color: #fff;
   font-size: 14px;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.6),
+  box-shadow: 0 0 15px rgb(192 162 29 / 60%),
     inset 0 0 8px rgba(255, 255, 255, 0.4);
   transition: transform 0.3s ease, background 0.5s;
   text-align: center;
@@ -386,22 +381,22 @@ header img {
   min-width: 120px;
   min-height: 44px;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 700;
   transition: 0.8s;
   background-size: 280% auto;
   background-image: linear-gradient(
     325deg,
-    #3383ff 0%,
-    #3bd2ff 55%,
-    #3383ff 90%
+    #ff841b 0%,
+    #ffd945 55%,
+    #d26a03 90%
   );
   border: none;
-  border-radius: 50px;
+  border-radius: 15px;
   color: #fff;
-  box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5),
-    0px 5px 5px -1px rgba(58, 125, 233, 0.25),
+  box-shadow: 0px 0px 20px rgb(255 181 27 / 50%),
+    0px 5px 5px -1px rgba(255, 198, 83, 0.25),
     inset 4px 4px 8px rgba(175, 230, 255, 0.5),
-    inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+    inset -4px -4px 8px rgba(248, 132, 0, 0.35);
 }
 
 .btn-donate:hover {
@@ -471,7 +466,7 @@ header img {
 }
 
 .navigate-btn {
-  background: linear-gradient(135deg, #3498db, #2196f3);
+  background: linear-gradient(135deg, #ffcc00, #ff8900);
   color: white;
   border: none;
   padding: 8px 16px;
@@ -824,10 +819,13 @@ header {
 }
 
 .heads1 {
-  color: wheat;
+  color: rgb(255, 255, 255);
   font-weight: bolder;
   font-size: 30px;
-  font-family: system-ui;
+  font-family: "Nabla", system-ui;
+  font-optical-sizing: auto;
+  /* font-weight: 400; */
+  font-style: normal;
   height: 5px;
 }
 
@@ -849,16 +847,16 @@ header {
   height: fit-content;
   width: fit-content;
   display: flex;
-  left: 35%;
+  left: 5%;
   position: relative;
-  top: 16%;
+  top: -10%;
 }
 
 /* mobile styles */
 
 @media (max-width: 768px) {
   header {
-    height: 170px;
+    height: 190px;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -866,7 +864,7 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1200;
-    padding-top: 25px;
+    padding-top: 20px;
   }
 
   #speed-container {
@@ -903,14 +901,17 @@ header {
     width: 45px;
     height: 45px;
     padding: 15px;
-    padding-top: 40px;
+    padding-top: 36px;
   }
 
   .heads1 {
     color: wheat;
     font-weight: bolder;
     font-size: 30px;
-    font-family: system-ui;
+    font-family: "Nabla", system-ui;
+    font-optical-sizing: auto;
+    /* font-weight: 400; */
+    font-style: normal;
     height: 5px;
   }
 
@@ -918,9 +919,11 @@ header {
     display: block;
     height: 50px;
     position: relative;
-    top: 32px;
+    align-items: center;
+    align-content: center;
+    top: 20px;
     left: 8px;
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .headsContainer {
@@ -932,21 +935,21 @@ header {
     flex-direction: row;
     height: 70%;
     bottom: 10px;
+    right: 5px;
     position: relative;
   }
 
   .head-btns {
     height: fit-content;
-    width: 89%;
+    width: 100%;
     display: flex;
-    left: 2%;
+    left: 5%;
     position: relative;
-    top: 3%;
-    flex-direction: row;
+    top: 15%;
   }
 
   .InputContainer {
-    height: 40px;
+    height: 45px;
   }
 
   #speed-container {
@@ -1016,6 +1019,86 @@ header {
   }
 }
 
+@media (min-width: 1024px) {
+  header {
+    height: 250px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1200;
+    padding-top: 20px;
+  }
+
+  header img {
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+    padding-bottom: 20px;
+    padding-top: 40px;
+  }
+
+  #speed {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffc000, #da9500);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgb(192 162 29 / 60%),
+      inset 0 0 8px rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease, background 0.5s;
+    text-align: center;
+  }
+
+  .head-btns {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    left: 5%;
+    position: relative;
+    top: 10%;
+  }
+
+  .coffee-btn {
+    display: inline-block;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    padding: 0 24px;
+    border-radius: 50px;
+    min-width: 150px;
+    height: 45px;
+    font-size: 14px;
+    background-color: #fd0;
+    font-weight: 500;
+    color: #222;
+    width: 10px;
+    position: relative;
+    top: 7px;
+  }
+
+  .btn-donate {
+    display: inline-block;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    padding: 0 24px;
+    border-radius: 15px;
+    min-width: 150px;
+    height: 45px;
+    font-size: 14px;
+    background-color: #fd0;
+    font-weight: 500;
+    color: #fafafa;
+  }
+}
 
 .modol {
             display: none;

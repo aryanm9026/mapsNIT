@@ -54,7 +54,7 @@ Promise.all([
   // --- Campus boundary ---
   const campusLayer = L.geoJSON(boundary, {
     style: {
-      color: "#124f95ff",
+      color: "#7d4803ff",
       weight: 10,
       opacity: 1,
       padding: "20px",
@@ -97,7 +97,7 @@ Promise.all([
   // --- Paths ---
   const pathLayer = L.geoJSON(paths, {
     style: {
-      color: "#796dffff",
+      color: "#f69700ff",
       weight: 4.5,
       opacity: 1,
       lineJoin: "round",
@@ -109,7 +109,7 @@ Promise.all([
     const zoom = map.getZoom();
     const newWeight = 3 * Math.pow(1.5, zoom - 15);
     pathLayer.setStyle({
-      color: "#796dffff",
+      color: "#f69700ff",
       weight: newWeight,
       opacity: 1,
       lineJoin: "round",
@@ -304,7 +304,7 @@ function openModal() {
 function closeModal() {
   const overlay = document.getElementById("modalOverlay");
   if (!overlay) return;
-  overlay.classList.remove("active");
+  overlay.classList.toggle("active");
   document.body.style.overflow = "";
 }
 

@@ -1,44 +1,7 @@
 {
   "type": "FeatureCollection",
   "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          75.81165784999999,
-          26.8627646
-        ]
-      },
-      "properties": {
-        "name": "ECE Department",
-        "category": "Departments",
-        "poi_count": 3,
-        "merged_pois": [
-          "ECE department",
-          "Electronics and Communication Department",
-          "Electronics Lab (ECE LAB)"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          75.8116227,
-          26.8625618
-        ]
-      },
-      "properties": {
-        "name": "Physics Department",
-        "category": "Departments",
-        "poi_count": 1,
-        "merged_pois": [
-          "Modern Physics Lab --I"
-        ]
-      }
-    },
+
     {
       "type": "Feature",
       "geometry": {
@@ -99,45 +62,7 @@
         ]
       }
     },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          75.81006215,
-          26.862285900000003
-        ]
-      },
-      "properties": {
-        "name": "Metallurgy Department",
-        "category": "Departments",
-        "poi_count": 4,
-        "merged_pois": [
-          "Metallurgical and Materials Engineering Department",
-          "Materials Testing Lab",
-          "Department of Metallurgy and Physics",
-          "Physics Lab -- 2"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          75.8107493,
-          26.8608864
-        ]
-      },
-      "properties": {
-        "name": "Mechanical Department/Workshop",
-        "category": "Departments",
-        "poi_count": 1,
-        "merged_pois": [
-          "Product Realization through Manufacturing (PRTM LAB)"
-        ]
-      }
-    },
+
     {
       "type": "Feature",
       "geometry": {
@@ -275,24 +200,7 @@
         ]
       }
     },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          75.8113891,
-          26.861402
-        ]
-      },
-      "properties": {
-        "name": "New Chemical Department",
-        "category": "Departments",
-        "poi_count": 1,
-        "merged_pois": [
-          "Chemical Department New"
-        ]
-      }
-    },
+
     {
       "type": "Feature",
       "geometry": {
