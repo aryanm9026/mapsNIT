@@ -39,7 +39,25 @@
           "Dean Academics ",
           "ICICI BANK ",
           "Computer Centre (CC)",
-          "Dean Student Welfare (DSW)"
+          "Dean Student Welfare (DSW)",
+          "Artificial Intelligence & Data Engineering Department (AIDE)"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.8105615,
+          26.8635836
+        ]
+      },
+      "properties": {
+        "name": "Artificial Intelligence & Data Engineering Department (AIDE)",
+        "poi_count": 0,
+        "merged_pois": [
+          ""
         ]
       }
     },

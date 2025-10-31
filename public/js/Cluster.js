@@ -150,8 +150,6 @@ function findNearestPoi(userLat, userLng) {
   return nearestPoi;
 }
 
-// One-time locate user
-// --- Updated one-time locate user function ---
 window.locateUser = function () {
   
   navigator.geolocation.getCurrentPosition(
@@ -176,7 +174,7 @@ window.locateUser = function () {
       
       const customIcon = L.icon({
         iconUrl: "../imgs/yaha.png",
-        iconSize: [32, 32],
+        iconSize: [40, 40],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],
       });
@@ -199,6 +197,14 @@ window.locateUser = function () {
     }
   );
 };
+
+window.openSphinx = function () {
+  window.location.href = "https://sphinx.org.in";
+}
+
+window.openAboutUs = function () {
+  window.location.href = "aboutus.html";
+}
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker

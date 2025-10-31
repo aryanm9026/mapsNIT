@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - 3DEVS</title>
+    <link rel="icon" type="image/png" href="./imgs/temp_sphinx_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated gradient background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(27, 106, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(210, 106, 3, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(53, 7, 243, 0.1) 0%, transparent 70%);
+            animation: bgShift 15s ease infinite;
+            z-index: 0;
+        }
+
+        @keyframes bgShift {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: fixed;
+            background: radial-gradient(circle, rgba(27, 106, 255, 0.3), transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 20s infinite;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            33% { transform: translateY(-100px) translateX(50px); }
+            66% { transform: translateY(-50px) translateX(-50px); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Back button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-5px);
+            border-color: rgba(27, 106, 255, 0.5);
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            margin-bottom: 100px;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #e9e9e9 0%, #0373d2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease;
+            letter-spacing: -2px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: #b0b0b0;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        /* Team section */
+        .team-section {
+            margin-bottom: 100px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .member-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(27, 106, 255, 0.1) 0%, rgba(210, 106, 3, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(27, 106, 255, 0.4);
+            box-shadow: 0 20px 60px rgba(27, 106, 255, 0.2);
+        }
+
+        .member-card:hover::before {
+            opacity: 1;
+        }
+
+        .member-avatar {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 30px;
+        }
+
+        .avatar-ring {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1b6aff, #d26a03);
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .avatar-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #1a1a2e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .avatar-inner svg {
+            width: 80px;
+            height: 80px;
+            opacity: 0.3;
+        }
+
+        .member-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .member-role {
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .linkedin-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #1b6aff 0%, #3507f3 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .linkedin-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(27, 106, 255, 0.4);
+        }
+
+        /* Support section */
+        .support-section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .support-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(27, 106, 255, 0.1), transparent 30%);
+            animation: rotate 10s linear infinite;
+        }
+
+        .support-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .qr-box {
+            width: 220px;
+            height: 220px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .qr-box:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .qr-box img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .support-text {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .support-title {
+            font-size: 1.5rem;
+            color: #1b6aff;
+            margin: 30px 0 15px;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                padding: 0;
+            }
+            
+            .support-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating particles -->
+    <div class="particle" style="width: 200px; height: 200px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="particle" style="width: 150px; height: 150px; top: 60%; right: 10%; animation-delay: 5s;"></div>
+    <div class="particle" style="width: 100px; height: 100px; bottom: 20%; left: 50%; animation-delay: 10s;"></div>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to MapsNIT
+        </a>
+
+        <section class="hero">
+            <h1>3DEVS</h1>
+            <p>A team of passionate students from National Institute of Technology, Jaipur (MNIT Jaipur), dedicated to leveraging our coding skills and innovative thinking to create impactful solutions that shape the future.</p>
+        </section>
+
+        <section class="team-section">
+            <h2 class="section-title">Meet the Team</h2>
+            <div class="team-grid">
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-inner">
+                            <img style="
+    width: 200px;" viewBox="0 0 24 24" fill="currentColor" src="https://media.licdn.com/dms/image/v2/D5603AQExeWXaZhJI9w/profile-displayphoto-shrink_800_800/B56ZSo1zmJHwAk-/0/1737999466348?e=1763596800&v=beta&t=b-1kFZyQqALbVQXaOd-dbXQnCifRV_0r7dMoIxo-gT4" alt="Aryan Mishra"/>
+                        </div>
+                    </div>
+                    <h3 class="member-name">Aryan Mishra</h3>
+                    <p class="member-role">Fullstack Web Developer</p>
+                    <a href="https://www.linkedin.com/in/aryanmishra9026/" target="_blank" rel="noopener noreferrer" class="linkedin-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        Connect
+                    </a>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-inner">
+                            <img style="
+    width: 200px;" viewBox="0 0 24 24" fill="currentColor" src="https://media.licdn.com/dms/image/v2/D5603AQE7KSE3ijyf_Q/profile-displayphoto-crop_800_800/B56Zj0OcxRIAAM-/0/1756444087939?e=1763596800&v=beta&t=5nY90FOwNfXaCF5MU8mGxVnjqaupvnbngjPdMrcUGcE" alt="Aryan Mishra"/>
+                        </div>
+                    </div>
+                    <h3 class="member-name">Lucky Agrawal</h3>
+                    <p class="member-role">Kattar Hindu and thoda sa Jain</p>
+                    <a href="https://www.linkedin.com/in/lucky-agrawal-397b50179/" target="_blank" rel="noopener noreferrer" class="linkedin-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        Connect
+                    </a>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-inner">
+                            <img style="width: 200px;
+    position: absolute;
+    right: -12px;" viewBox="0 0 24 24" fill="currentColor" src="https://media.licdn.com/dms/image/v2/D5603AQE4fkOH16cTeg/profile-displayphoto-crop_800_800/B56ZnYDIbQI4AI-/0/1760266330575?e=1763596800&v=beta&t=3TatV7KcF2XfaOfyUQhGx7A19llA-csXoLwe7zJYLSM" alt="Aryan Mishra"/>
+                        </div>
+                    </div>
+                    <h3 class="member-name">Sushobhit</h3>
+                    <p class="member-role">Web Developer and Map Designer</p>
+                    <a href="https://www.linkedin.com/in/sushobhit-katiyar-b393712a7/" target="_blank" rel="noopener noreferrer" class="linkedin-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        Connect
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <div class="support-content">
+                <h2 class="section-title">Support Our Mission</h2>
+                <p class="support-text">Your contributions are vital in helping us develop innovative solutions, maintain our projects, and create tools that benefit the community. Every donation makes a difference!</p>
+
+                <div class="qr-box">
+                    <img src="./imgs/qrcode.png" alt="Donation QR Code">
+                </div>
+
+                <div class="support-title">💡 Why Support Us?</div>
+                <p class="support-text">
+                    By supporting 3DEVS, you're investing in future-focused projects and empowering students to make a real impact. Your generosity fuels our passion for coding and problem-solving!
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 3DEVS. All rights reserved.
+    </footer>
+</body>
+</html>

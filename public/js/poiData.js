@@ -1043,4 +1043,11 @@ var poiList = [
     description: "VLTC 2ND FLOOR",
     timings: "8NOV",
   },
+  {
+    name: "Artificial Intelligence & Data Engineering Department (AIDE)",
+    coords: [26.8635836, 75.8105615],
+    category: "",
+    description: "Through a passage on second Floor at the end of corridor",
+    timings: "",
+  },
 ];

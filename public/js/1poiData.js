@@ -490,6 +490,13 @@ const poiList = [
     timings: "",
   },
   {
+    name: "Artificial Intelligence & Data Engineering Department (AIDE)",
+    coords: [26.8637887, 75.8108025],
+    category: "",
+    description: "Through a passage on second Floor at the end , near the washroom",
+    timings: "",
+  },
+  {
     name: "Mathematics department",
     coords: [26.8626854, 75.8144156],
     category: "",
