@@ -377,7 +377,6 @@ header img {
 /* 🎁 Donate Button */
 .btn-donate {
   cursor: pointer;
-  padding: 0.9em 1.4em;
   min-width: 120px;
   min-height: 44px;
   font-size: 1rem;
