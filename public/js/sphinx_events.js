@@ -168,7 +168,7 @@ const extractedEvents = [
     eventName: "SparkX",
     venue: "VLTC 2ND FLOOR",
     dates: ["8NOV"]
-  }
+  },
 // New events that added afterwards
   {
     eventName: "Decode The Scam",
