@@ -637,10 +637,10 @@ window.navigateTo = function (endCoords) {
         .setContent(
           `
           <div style="text-align: center;">
-            <h4>🗺️ Shortest Route Found!</h4>
+            <h4>Shortest Route Found!</h4>
             <p><strong>Distance:</strong> ${distanceText}</p>
             <p><strong>Via:</strong> ${pathNodeIds.length} waypoints</p>
-            <button onclick="clearRoute()" style="padding: 5px 10px; margin-top: 5px;">Clear Route</button>
+            <button onclick="clearRoute()" class="navigate-btn">Clear Route</button>
           </div>
         `
         )

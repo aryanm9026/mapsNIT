@@ -5,7 +5,7 @@ const poiList = [
     category: "",
     description: "",
     timings: "",
-  },
+  }, 
   {
     name: "Kuch to haiiii",
     coords: [26.8596757, 75.8109166],
