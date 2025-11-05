@@ -239,7 +239,7 @@ const extractedEvents = [
     eventName: "Bidding War",
     venue: "VLTC L103",
     dates: ["9NOV"]
-  }
+  },
   // more events
  {
     eventName: "Ai Experience",
