@@ -169,5 +169,77 @@ const extractedEvents = [
     venue: "VLTC 2ND FLOOR",
     dates: ["8NOV"]
   }
+// New events that added afterwards
+  {
+    eventName: "Decode The Scam",
+    venue: "VLTC L104",
+    dates: ["7NOV"]
+  },
+  {
+    eventName: "Electro Hunt",
+    venue: "VLTC L007",
+    dates: ["7NOV"]
+  },
+  {
+    eventName: "Corporate Catalyst",
+    venue: "VLTC L103",
+    dates: ["7NOV"]
+  },
+  {
+    eventName: "Bridge Busters",
+    venue: "VLTC L002",
+    dates: ["7NOV"]
+  },
+  {
+    eventName: "Interactive Installation Challenge",
+    venue: "VLTC L009",
+    dates: ["7NOV"]
+  },
+  {
+    eventName: "Matquiz - The Materials Science Quiz",
+    venue: "VLTC L008",
+    dates: ["8NOV"]
+  },
+  {
+    eventName: "Tambola",
+    venue: "VLTC L104",
+    dates: ["8NOV"]
+  },
+  {
+    eventName: "Ad Mania",
+    venue: "VLTC L103",
+    dates: ["8NOV"]
+  },
+  {
+    eventName: "Tremor Tech",
+    venue: "VLTC L008",
+    dates: ["9NOV"]
+  },
+  {
+    eventName: "The Chemical Challenge",
+    venue: "VLTC L103",
+    dates: ["9NOV"]
+  },
+  {
+    eventName: "Type Racer",
+    venue: "VLTC L004",
+    dates: ["9NOV"]
+  },
+  {
+    eventName: "Phaseshift",
+    venue: "VLTC L006",
+    dates: ["9NOV"]
+  },
+  {
+    eventName: "Cad Master",
+    venue: "VLTC L104",
+    dates: ["9NOV"]
+  },
+  {
+    eventName: "Bidding War",
+    venue: "VLTC L103",
+    dates: ["9NOV"]
+  }
 ];
+
 
