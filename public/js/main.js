@@ -315,6 +315,7 @@ function goToPOI(poi) {
       `
       <div style="text-align:center;">
         <h3 style="margin:6px 0 4px;">${poi.name}</h3>
+        <p class="popup-desc"><strong>Venue:</strong> ${poi.venue || "N/A"}</p>
         <p class="popup-desc">${poi.description || ""}</p>
         <p><strong>Timings:</strong> ${poi.timings || "-"}</p>
         <button class="navigate-btn" onclick="navigateTo([${poi.coords[1]}, ${
