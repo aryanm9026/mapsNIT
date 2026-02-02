@@ -23,6 +23,7 @@ if (localStorage.getItem("visited")) {
 
 const map = L.map("map", {
   zoomControl: true,
+  preferCanvas: true,
   minZoom: 15,
   maxZoom: 20,
 }).setView([26.864, 75.815], 16);
@@ -39,7 +40,30 @@ let clusteredPOIs, detailedPOIs;
 let activeRoute = null;
 let pathNetwork = null;
 let routingGraph = null;
+// --- Confirmation Modal Logic ---
+// We get the elements ONCE, at the start.
+let buildingToOpen = null;
+const confirmModal = document.getElementById("confirmModal");
+const confirmBtnYes = document.getElementById("confirmBtnYes");
+const confirmBtnNo = document.getElementById("confirmBtnNo");
+const confirmBuildingName = document.getElementById("confirmBuildingName");
 
+// We set the "Yes" click listener ONCE.
+confirmBtnYes.onclick = () => {
+  if (buildingToOpen) {
+    // This function is in your internal.js file
+    openBuildingMap(buildingToOpen.id, buildingToOpen.name);
+  }
+  confirmModal.style.display = "none"; // Hide confirmation modal
+  buildingToOpen = null;
+};
+
+// We set the "No" click listener ONCE.
+confirmBtnNo.onclick = () => {
+  confirmModal.style.display = "none"; // Hide confirmation modal
+  buildingToOpen = null;
+};
+// --- End of Confirmation Modal Logic ---F
 // --- All GeoJSON data ---
 Promise.all([
   fetch("/data/campus_boundary.geojson").then((res) => res.json()),
@@ -54,7 +78,7 @@ Promise.all([
   // --- Campus boundary ---
   const campusLayer = L.geoJSON(boundary, {
     style: {
-      color: "#124f95ff",
+      color: "#7d4803ff",
       weight: 10,
       opacity: 1,
       padding: "20px",
@@ -84,12 +108,25 @@ Promise.all([
           }, ${layer.getBounds().getCenter().lat}])">
             Navigate
           </button>
+          <button class="popup-btn" onclick="openBuildingMap('${feature.properties.id}', '${feature.properties.name}')">
+      Open Internal Map
+    </button>
         </div>
       `);
-      layer.on("dblclick", () => {
-        if (feature.properties.id && feature.properties.name) {
-          openBuildingMap(feature.properties.id, feature.properties.name);
+      layer.on("click", () => {
+       const buildingId = feature.properties.id;
+      const buildingName = feature.properties.name || "Building";
+      buildingToOpen = { id: buildingId, name: buildingName };
+      confirmBuildingName.innerText = buildingName;
+      confirmModal.style.display = "none";
+        document.getElementById("confirmBtnYes").addEventListener("click",(e)=>{
+                    if (feature.properties.id && feature.properties.name) {
+                    openBuildingMap(feature.properties.id, feature.properties.name);
+                    document.getElementById("confirmModal").style.display = "none"
+
         }
+        })
+
       });
     },
   }).addTo(map);
@@ -97,7 +134,7 @@ Promise.all([
   // --- Paths ---
   const pathLayer = L.geoJSON(paths, {
     style: {
-      color: "#796dffff",
+      color: "#f69700ff",
       weight: 4.5,
       opacity: 1,
       lineJoin: "round",
@@ -109,7 +146,7 @@ Promise.all([
     const zoom = map.getZoom();
     const newWeight = 3 * Math.pow(1.5, zoom - 15);
     pathLayer.setStyle({
-      color: "#796dffff",
+      color: "#f69700ff",
       weight: newWeight,
       opacity: 1,
       lineJoin: "round",
@@ -304,7 +341,7 @@ function openModal() {
 function closeModal() {
   const overlay = document.getElementById("modalOverlay");
   if (!overlay) return;
-  overlay.classList.remove("active");
+  overlay.classList.toggle("active");
   document.body.style.overflow = "";
 }
 
@@ -332,4 +369,97 @@ document.querySelectorAll(".btn, .member-link, .social-link").forEach((el) => {
 
     setTimeout(() => ripple.remove(), 600);
   });
+});
+
+
+// Replace the events modal section in main.js with this:
+
+// sphinx-events
+function getEventDateString(dateObj) {
+    const day = dateObj.getDate();
+    const month = dateObj.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+    return `${day}${month}`;
+}
+
+/**
+ * Finds all events scheduled for a specific date.
+ */
+function findEventsForDate(dateString) {
+    return extractedEvents.filter(event => event.dates.includes(dateString));
+}
+
+/**
+ * Creates and shows the popup modal with the list of events.
+ */
+function showEventsPopup(events) {
+    const modal = document.getElementById('events-modal');
+    const eventListElement = document.getElementById('events-list');
+    const noEventsMessage = document.getElementById('no-events-msg');
+
+    if (!modal || !eventListElement || !noEventsMessage) {
+        console.error("Modal elements not found!");
+        return;
+    }
+
+    // Clear any old event items
+    eventListElement.innerHTML = '';
+
+    if (events.length === 0) {
+        // No events, show the "no events" message
+        eventListElement.classList.add('hidden');
+        noEventsMessage.classList.remove('hidden');
+    } else {
+        // We have events, hide the "no events" message
+        eventListElement.classList.remove('hidden');
+        noEventsMessage.classList.add('hidden');
+
+        // Create and add each event to the list
+        events.forEach(event => {
+            const li = document.createElement('li');
+            li.className = 'bg-gray-800 p-4 rounded-lg shadow-md';
+            li.innerHTML = `
+                <h3 class="font-bold text-lg text-amber-400">${event.eventName}</h3>
+                <p class="text-sm text-gray-300">Venue: ${event.venue}</p>
+            `;
+            eventListElement.appendChild(li);
+        });
+    }
+
+    // Show the modal
+    modal.classList.remove('hidden');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // CHANGED: Use actual current date instead of hardcoded date
+    let dateToCheck = new Date();
+    
+    // For testing specific dates, uncomment one of these:
+    // dateToCheck = new Date("November 7, 2025");
+    // dateToCheck = new Date("November 8, 2025");
+    
+    console.log("Checking events for:", dateToCheck);
+    const todayString = getEventDateString(dateToCheck);
+    console.log("Date string:", todayString);
+    const todaysEvents = findEventsForDate(todayString);
+    console.log("Found events:", todaysEvents);
+
+    // Always show the popup (even if no events) on every page load
+    showEventsPopup(todaysEvents);
+
+    // Add click listener for the close button
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const modal = document.getElementById('events-modal');
+
+    if(closeModalBtn && modal) {
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+        
+        // Optional: Close modal by clicking on the dark background
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    }
 });
