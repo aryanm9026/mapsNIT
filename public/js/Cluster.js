@@ -11,6 +11,7 @@ function makePulsingIcon() {
   });
 }
 
+
 function smoothMoveMarker(marker, fromLatLng, toLatLng, duration = 500) {
   const start = performance.now();
 
@@ -103,29 +104,88 @@ navigator.geolocation.watchPosition(handlePosition, console.error, {
   maximumAge: 1000,
   timeout: 10000,
 });
+/**
+ * Finds the nearest POI from the global 'poiList' array.
+ * (Assumes 'poiList' is loaded from poiData.js)
+ * @param {number} userLat - User's latitude
+ * @param {number} userLng - User's longitude
+ * @returns {object|null} The nearest POI object, or null if not found.
+ */
+function findNearestPoi(userLat, userLng) {
+  if (!window.poiList || !Array.isArray(window.poiList) || window.poiList.length === 0) {
+    console.error("poiList is not loaded or is empty. Check poiData.js.");
+    return null;
+  }
 
-// One-time locate user
+  let nearestPoi = null;
+  let minDistance = Infinity;
+  const userLatLng = L.latLng(userLat, userLng);
+
+  for (const poi of window.poiList) {
+    
+    // --- THIS IS THE FIX ---
+    // Check if 'coords' is an array with 2 numbers
+    if (poi.coords && Array.isArray(poi.coords) && poi.coords.length === 2) {
+      
+      // Use coords[0] for lat and coords[1] for lng
+      const poiLatLng = L.latLng(poi.coords[0], poi.coords[1]);
+      const distance = userLatLng.distanceTo(poiLatLng);
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        nearestPoi = poi;
+      }
+    } else {
+      console.warn("DEBUG: Skipping a POI with invalid 'coords':", poi.name);
+    }
+    // --- END FIX ---
+  }
+
+  if (nearestPoi) {
+    console.log(`DEBUG: The nearest POI is ${nearestPoi.name} at ${minDistance} meters.`);
+  } else {
+    console.warn("DEBUG: Could not find any nearest POI.");
+  }
+
+  return nearestPoi;
+}
+
 window.locateUser = function () {
+  
   navigator.geolocation.getCurrentPosition(
-    async (position) => {
-      const lat = await position.coords.latitude;
-      const lng = await position.coords.longitude;
+    (position) => {
+      // We got the user's location
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
       console.log("chala 1");
 
+      // --- NEW FEATURE LOGIC ---
+      // Call our new helper function
+      const nearest = findNearestPoi(lat, lng);
+
+      // Create the popup message
+      console.log(nearest.name)
+      let popupMessage = "📍 You are here"; // Default message
+      if (nearest) {
+        // 'nearest' is an object like {name: "Main Gate", ...}
+        popupMessage = `📍 You are near <b>${nearest.name}</b>`;
+      }
+      // --- END NEW FEATURE ---
+      
       const customIcon = L.icon({
         iconUrl: "../imgs/yaha.png",
-        iconSize: [32, 32],
+        iconSize: [40, 40],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],
       });
 
-      // Add marker for user location
-      const userMarker = L.marker([lat, lng], {
+      // Using 'locationPin' to avoid conflict with your global 'userMarker'
+      const locationPin = L.marker([lat, lng], {
         title: "idhar toh dekho !",
         icon: customIcon,
       })
         .addTo(map)
-        .bindPopup("📍 Areh idhar toh dekho")
+        .bindPopup(popupMessage) // Use the new dynamic message
         .openPopup();
 
       map.setView([lat, lng], 18, { animate: true });
@@ -137,6 +197,14 @@ window.locateUser = function () {
     }
   );
 };
+
+window.openSphinx = function () {
+  window.location.href = "https://sphinx.org.in";
+}
+
+window.openAboutUs = function () {
+  window.location.href = "aboutus.html";
+}
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
