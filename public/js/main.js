@@ -158,7 +158,7 @@ Promise.all([
   // --- Clustered POIs (default) ---
   clusteredPOIs = L.geoJSON(clustered, {
     pointToLayer: (feature, latlng) =>
-      L.marker(latlng, { icon: getIcon(feature.properties.category) })
+      L.marker(latlng, { icon: getIcon(feature.properties.category,feature.properties.name) })
         .bindPopup(`
           <div class="popup-content">
             <div class="popup-title">${feature.properties.name}</div>

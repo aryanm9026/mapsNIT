@@ -229,6 +229,25 @@
         ]
       },
       "properties": {
+        "name": "Night Canteen",
+        
+        "poi_count": 2,
+        "merged_pois": [
+          "Night canteen (boys)",
+          "Night Canteen"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.81790565,
+          26.8598839
+        ]
+      },
+      "properties": {
         "name": "H-4 Lohit Hostel",
         "category": "Hostels",
         "poi_count": 2,
@@ -336,9 +355,10 @@
       "properties": {
         "name": "VLTC",
         "poi_count": 3,
+        "category":"Vltc",
         "merged_pois": [
           "Mathematics department",
-          "UG Registration "
+          "UG Registration"
         ]
       }
     },
