@@ -5,7 +5,7 @@ const poiList = [
     category: "",
     description: "",
     timings: "",
-  },
+  }, 
   {
     name: "Kuch to haiiii",
     coords: [26.8596757, 75.8109166],
@@ -487,6 +487,13 @@ const poiList = [
     coords: [26.8637887, 75.8108025],
     category: "",
     description: "",
+    timings: "",
+  },
+  {
+    name: "Artificial Intelligence & Data Engineering Department (AIDE)",
+    coords: [26.8637887, 75.8108025],
+    category: "",
+    description: "Through a passage on second Floor at the end , near the washroom",
     timings: "",
   },
   {

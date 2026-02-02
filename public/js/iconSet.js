@@ -3,28 +3,28 @@ function getIcon(category) {
     case "Departments":
       return L.icon({
         iconUrl: "../imgs/icons/education.png",
-        iconSize: [28, 28],
+        iconSize: [23, 23],
         iconAnchor: [14, 28],
         popupAnchor: [0, -28],
       });
     case "Gate":
       return L.icon({
         iconUrl: "../imgs/icons/gate-icon.png",
-        iconSize: [28, 28],
+        iconSize: [23, 23],
         iconAnchor: [14, 28],
         popupAnchor: [0, -28],
       });
     case "Hostels":
       return L.icon({
         iconUrl: "../imgs/icons/hostel-icon.png",
-        iconSize: [28, 28],
+        iconSize: [23, 23],
         iconAnchor: [14, 28],
         popupAnchor: [0, -28],
       });
     case "Cafes":
       return L.icon({
         iconUrl: "../imgs/icons/cafe-icon.png",
-        iconSize: [30, 30],
+        iconSize: [23, 23],
         iconAnchor: [14, 28],
         popupAnchor: [0, -28],
       });
@@ -38,7 +38,7 @@ function getIcon(category) {
     default:
       return L.icon({
         iconUrl: "../imgs/icons/default-poi.png",
-        iconSize: [28, 28],
+        iconSize: [23, 23],
         iconAnchor: [14, 28],
         popupAnchor: [0, -28],
       });

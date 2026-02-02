@@ -2,11 +2,19 @@
 <html lang="en">
 
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MELLSCCTT7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MELLSCCTT7');
+</script>
   <title>Welcome - MapsNIT</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="icon" type="image/png" href="./imgs//app-icon.png">
+  <link rel="icon" type="image/png" href="./imgs//temp_sphinx_logo.png">
   <meta name="theme-color" content="#f5deb3">
 
 
@@ -25,6 +33,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
   <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
   <script defer data-domain="mapsnit.onrender.com" src="https://plausible.io/js/script.js"></script>
 </head>
@@ -32,12 +44,12 @@
 <body>
   <header>
     <div class="heading">
-      <img src="./imgs/Mnit_logo.png" />
+      <img src="./imgs/temp_sphinx_logo.png" />
       <div class="headsContainer">
         <p class="heads1">
           mapsNIT
         </p>
-        <p class="heads2">Made with &#x1F49B by 3devs<br>Students of MNIT Jaipur</p>
+        <p class="heads2">v1.1<br>( Sphinx Edition ) By 3DEVS</p>
       </div>
     </div>
 
@@ -47,19 +59,21 @@
         <input placeholder="Search for Events or Buildings" id="search-box" class="input" name="text" type="text" />
       </div>
 
-      <!-- Suggestions list -->
       <ul id="suggestions"></ul>
-
-      <!-- Speed display -->
-      <!-- <div id="speed">0 m/s</div> -->
     </div>
 
 
     <div class="head-btns">
       <div>
-        <button type="button" onclick=openModal() class="coffee-btn">Buy me a Coffee</button>
-
         <button onclick="locateUser()" class="btn-donate">Locate Me</button>
+      </div>
+
+      <div style="margin-left: 10px;">
+        <button onclick="openSphinx()" class="btn-donate" style="background-image: linear-gradient(325deg, #1b6aff 0%, #3507f3  55%, #d26a03 90%);">Sphinx &#8680</button>
+      </div>
+      
+      <div style="margin-left: 10px;">
+        <button onclick="openAboutUs()" class="btn-donate">About us</button>
       </div>
     </div>
 
@@ -67,7 +81,7 @@
   </header>
   <main>
     <div id="intro-screen">
-      <img src="./imgs//Mnit_logo.png" alt="Logo">
+      <img src="./imgs/temp_sphinx_logo.png" alt="Logo">
       <h2>Welcome to <span id="m">M</span><span id="chng">aps</span>NIT</h2>
       </h2>
       <p>Made with 💛 by 3Devs</p>
@@ -89,6 +103,23 @@
         </ul>
       </div>
     </div>
+
+    <!-- <div id="events-modal" class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm flex items-center justify-center p-4 hidden" style="z-index: 1400;">
+    <div class="modal-fade-in bg-gray-900 rounded-lg shadow-2xl w-full max-w-md border border-amber-500">
+        <div class="flex justify-between items-center p-5 border-b border-gray-700">
+            <h2 class="text-2xl font-semibold text-amber-400">Today's Events</h2>
+            <button id="close-modal-btn" class="text-gray-400 hover:text-white transition-colors rounded-full p-1 hover:bg-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        
+        <div class="p-5">
+            <ul id="events-list" class="space-y-3 max-h-80 overflow-y-auto">
+            </ul>
+            <p id="no-events-msg" class="text-gray-400 text-center hidden">No events scheduled for today.</p>
+        </div>
+    </div>
+    </div> -->
 
     <div id="map">
       <div id="speed-container">
@@ -148,6 +179,7 @@
     </div>
 
 
+
     </div>
 
     <div class="focus-mask" id="focusMask"></div>
@@ -162,6 +194,16 @@
         <div id="indoorMap" style="height: 500px; margin-top: 10px"></div>
       </div>
     </div>
+   <div id="confirmModal" class="confirm-modal-overlay">
+      <div class="confirm-modal-content">
+          <h3 id="confirmBuildingName">Building Name</h3>
+          <p>Do you want to open the internal map for this building?</p>
+          <div class="confirm-modal-buttons">
+            <button id="confirmBtnYes">Yes, open</button>
+            <button id="confirmBtnNo">Cancel</button>
+        </div>
+      </div>
+  </div>
 
     <a href="https://forms.gle/WpTEunud7i47ZU6y8" class="feedback-btn">
       Feedback
