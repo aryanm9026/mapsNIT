@@ -44,14 +44,32 @@
 <body>
   <header>
     <div class="heading">
-      <img src="./imgs/temp_sphinx_logo.png" />
+      <img class="main-logo" src="./imgs/blitz_logo.png" />
       <div class="headsContainer">
         <p class="heads1">
-          mapsNIT
+          mapsNIT<p class="heads2">  (v1.2) By 3DEVS</p>
         </p>
-        <p class="heads2">v1.1<br>( Sphinx Edition ) By 3DEVS</p>
+        
       </div>
     </div>
+
+    <div class="menu-container">
+  
+  <button onclick="toggleMenu()" class="btn-donate menu-trigger">
+    Menu &#9776; </button>
+
+  <div id="verticalMenu" class="menu-dropdown">
+    
+    <button onclick="locateUser()" class="btn-donate">Locate Me</button>
+
+    <button onclick="openBlitz()" class="btn-donate" style="background-image: linear-gradient(325deg, #1b6aff 0%, #3507f3 55%, #d26a03 90%);">
+      Blitzschlag &#8680;
+    </button>
+    
+    <button onclick="openAboutUs()" class="btn-donate">About us</button>
+  </div>
+
+</div>
 
 
     <div id="search-container">
@@ -60,21 +78,6 @@
       </div>
 
       <ul id="suggestions"></ul>
-    </div>
-
-
-    <div class="head-btns">
-      <div>
-        <button onclick="locateUser()" class="btn-donate">Locate Me</button>
-      </div>
-
-      <div style="margin-left: 10px;">
-        <button onclick="openSphinx()" class="btn-donate" style="background-image: linear-gradient(325deg, #1b6aff 0%, #3507f3  55%, #d26a03 90%);">Sphinx &#8680</button>
-      </div>
-      
-      <div style="margin-left: 10px;">
-        <button onclick="openAboutUs()" class="btn-donate">About us</button>
-      </div>
     </div>
 
 

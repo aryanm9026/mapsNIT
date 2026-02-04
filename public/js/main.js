@@ -463,3 +463,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function toggleMenu() {
+  const menu = document.getElementById("verticalMenu");
+  menu.classList.toggle("show");
+}
+
+// Optional: Close the menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.menu-trigger')) {
+    const menu = document.getElementById("verticalMenu");
+    if (menu.classList.contains('show')) {
+      menu.classList.remove('show');
+    }
+  }
+}

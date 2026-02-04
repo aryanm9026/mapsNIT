@@ -8,6 +8,10 @@ body {
   background: #000; /* ensure high-contrast background */
 }
 
+.main-logo {
+  width: 175px;
+}
+
 .feedback-btn {
   position: fixed;
   bottom: 20px;
@@ -86,13 +90,14 @@ body {
 }
 
 header {
-  height: 26%;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  width: 100%;
-  z-index: 1200;
+  height: 26vh;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        z-index: 1200;
 }
 
 header img {
@@ -146,13 +151,13 @@ header img {
 
 /* 🔎 Search bar */
 #search-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  height: fit-content;
-  top: 50%;
-  width: 90%;
+  position: relative;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    z-index: 900;
+    height: fit-content;
+    width: 85%;
+    bottom: 15vh;
 }
 
 .InputContainer {
@@ -829,15 +834,11 @@ header img {
   }
 }
 
-header {
-  padding-top: 30px;
-}
-
 .heading {
   height: fit-content;
   width: fit-content;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   position: relative;
@@ -845,28 +846,41 @@ header {
 }
 
 .heads1 {
-  color: rgb(255, 255, 255);
-  font-weight: bolder;
-  font-size: 30px;
-  font-family: "Nabla", system-ui;
-  font-optical-sizing: auto;
-  /* font-weight: 400; */
-  font-style: normal;
-  height: 5px;
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+    background-clip: text;
+    font-weight: bolder;
+    font-size: 25px;
+    font-family: "Nabla", system-ui;
+    font-optical-sizing: auto;
+    /* font-weight: 400; */
+    font-style: normal;
+    /* height: 5px; */
+        width: max-content;
+
+    margin: 0;
+}
+
+.heads2 {
+      margin: 0;
 }
 
 .headsContainer {
   color: wheat;
-  font-weight: bolder;
-  font-size: 12px;
-  font-family: system-ui;
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-  width: fit-content;
-  bottom: 10px;
-  position: relative;
-  justify-content: center;
+    font-weight: bolder;
+    font-size: 0.85rem;
+    /* height: fit-content; */
+    /* width: fit-content; */
+    /* bottom: 10px; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* gap: 0.75rem; */
+    top: -5vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .head-btns {
@@ -876,6 +890,51 @@ header {
   left: 5%;
   position: relative;
   top: -10%;
+}
+
+
+/* Container to hold the position relative to the button */
+.menu-container {
+  position: relative;
+  display: inline-block;
+  bottom: 90%;
+    right: 40%;
+}
+
+/* The style of the main Menu button */
+.menu-trigger {
+  cursor: pointer;
+  /* You can keep your existing btn-donate styles or add specific ones here */
+}
+
+/* The Dropdown Container */
+.menu-dropdown {
+  display: none; /* Hidden by default */
+  position: absolute;
+  left: 1%;
+    top: 115%;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1000; /* Ensures it sits on top of other content */
+  min-width: 150px;
+  
+  /* This creates the Vertical Stack */
+  flex-direction: column;
+  gap: 10px; /* Space between buttons */
+}
+
+/* Class to show the menu */
+.menu-dropdown.show {
+  display: flex;
+}
+
+/* Optional: Ensure buttons fill the width of the dropdown */
+.menu-dropdown .btn-donate {
+  width: 100%;
+  text-align: center;
+  margin: 0; /* Resetting original margins */
 }
 
 /* mobile styles */

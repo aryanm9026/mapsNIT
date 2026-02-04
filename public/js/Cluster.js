@@ -198,8 +198,8 @@ window.locateUser = function () {
   );
 };
 
-window.openSphinx = function () {
-  window.location.href = "https://sphinx.org.in";
+window.openBlitz = function () {
+  window.location.href = "https://blitzschlag.co.in/";
 }
 
 window.openAboutUs = function () {
