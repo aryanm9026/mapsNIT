@@ -976,25 +976,28 @@ const poiList = [
     timings: "2026-02-08, 3:00-5:00 PM"
   },
   {
+    //recheck
     name: "Squid Games",
-    venue: "Cricket Ground",
-    coords: [26.8615576, 75.8136685], // Used Cricket Ground coordinates
+    venue: "NA",
+    coords: [26.862502, 75.8143449], // Used Cricket Ground coordinates
     category: "mass and media",
     description: "Multi-round eliminator event involving relay, puzzles, and mini-games.",
     timings: "07-02-2026/08-02-2026, 10AM-4PM"
   },
   {
+    //recheck
     name: "The Upside Down",
-    venue: "Computer Centre",
-    coords: [26.8635833, 75.8103205], // Used Computer Centre (CC) coordinates
+    venue: "NA",
+    coords:[26.862502, 75.8143449], // Used Computer Centre (CC) coordinates
     category: "mass and media",
     description: "Stranger Things–themed Escape Room challenge with hidden evidence and clues.",
     timings: "2026-02-06, 10AM-4PM"
   },
   {
+    //recheck
     name: "Family Fued",
-    venue: "Central Canteen",
-    coords: [26.8631305, 75.8105471], // Used Central Canteen coordinates
+    venue: "NA",
+    coords:[26.862502, 75.8143449], // Used Central Canteen coordinates
     category: "mass and media",
     description: "Buzzer-based game show revolving around campus culture and student life.",
     timings: "2026-02-07"
@@ -1008,9 +1011,10 @@ const poiList = [
     timings: "2026-02-07, 11PM-3PM"
   },
   {
+    // recheck
     name: "MNIT's Live",
-    venue: "Central Lawn",
-    coords: [26.8620375, 75.8092141], // Used Central Lawn coordinates
+    venue: "NA",
+    coords: [26.862502, 75.8143449], // Used Central Lawn coordinates
     category: "mass and media",
     description: "Spontaneous debate event on light-hearted topics revealing on the spot.",
     timings: "2026-02-06, 12PM-3PM"
@@ -1072,9 +1076,10 @@ const poiList = [
     timings: "2026-02-07, 10AM-3PM"
   },
   {
+    //recheck
     name: "CineFrame",
-    venue: "Prabha Bhawan",
-    coords: [26.8637887, 75.8108025], // Used Prabha Bhawan coordinates
+    venue: "NA",
+    coords: [26.862502, 75.8143449], // Used vltc back coordinates
     category: "photography",
     description: "Storytelling competition through short films or photo series.",
     timings: "All 3 Days"
@@ -1089,8 +1094,8 @@ const poiList = [
   },
   {
     name: "Open Mic",
-    venue: "Ramanujan Hall (Prabha Bhawan)",
-    coords: [26.8637887, 75.8108025], // Used Prabha Bhawan coordinates
+    venue: "Ramanujan Hall",
+    coords: [26.862502, 75.8143449], // Used vltc back coordinates
     category: "poetry",
     description: "Expressive space for poets to share original poems, ghazals, and spoken word.",
     timings: "2026-02-06, 1PM-3PM"
@@ -1106,7 +1111,7 @@ const poiList = [
   {
     name: "Abhivyakti Sabha",
     venue: "Ramanujan Hall (Prabha Bhawan)",
-    coords: [26.8637887, 75.8108025], // Used Prabha Bhawan coordinates
+    coords: [26.862502, 75.8143449], // Used vltc back coordinates
     category: "poetry",
     description: "Poetry writing competition based on a provided theme.",
     timings: "2026-02-07, 3PM-4PM"
@@ -1161,8 +1166,8 @@ const poiList = [
   },
   {
     name: "Cosplay",
-    venue: "Ramanujan Hall (Prabha Bhawan)",
-    coords: [26.8637887, 75.8108025], // Used Prabha Bhawan coordinates
+    venue: "Ramanujan Hall",
+    coords: [26.862502, 75.8143449], // Used Prabha Bhawan coordinates
     category: "fashion club",
     description: "Embodying anime or movie characters through performance and costume.",
     timings: "2026-02-07, 10am-1pm"
@@ -1313,8 +1318,8 @@ const poiList = [
   },
   {
     name: "Human Monopoly",
-    venue: "Homi JB Hall (Prabha Bhawan)",
-    coords: [26.8637887, 75.8108025], // Used Prabha Bhawan coordinates as placeholder
+    venue: "Homi JB Hall",
+    coords: [26.862502, 75.8143449], // Used Prabha vltc back coordinates as placeholder
     category: "Ed cell",
     description: "Life-sized Monopoly game focused on property and financial decisions.",
     timings: "2026-02-08, 10AM-5PM"
