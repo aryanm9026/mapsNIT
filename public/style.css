@@ -9,7 +9,8 @@ body {
 }
 
 .main-logo {
-  width: 175px;
+  height: auto;
+    width: 28rem;
 }
 
 .feedback-btn {
@@ -98,6 +99,9 @@ header {
         position: relative;
         width: 100%;
         z-index: 1200;
+        background-image: url('./imgs//header-bg.png');
+        background-size: cover;
+        border-radius: 0 0 20px 20px;
 }
 
 header img {
@@ -311,7 +315,7 @@ header img {
 }
 
 .leaflet-control-container {
-  z-index: 1000;
+  z-index: 0;
 }
 
 .leaflet-bar a {
@@ -382,7 +386,7 @@ header img {
 /* 🎁 Donate Button */
 .btn-donate {
   cursor: pointer;
-  min-width: 120px;
+  min-width: 50px;
   min-height: 44px;
   font-size: 1rem;
   font-weight: 700;
@@ -842,7 +846,7 @@ header img {
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  bottom: 45px;
+  bottom: 2rem;
 }
 
 .heads1 {
@@ -877,7 +881,7 @@ header img {
     display: flex;
     align-items: center;
     /* gap: 0.75rem; */
-    top: -5vh;
+    top: -4vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -897,7 +901,7 @@ header img {
 .menu-container {
   position: relative;
   display: inline-block;
-  bottom: 90%;
+  bottom: 13rem;
     right: 40%;
 }
 
@@ -974,12 +978,13 @@ header img {
 
   .heading {
     height: fit-content;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    position: relative;
-    font-size: 5px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        font-size: 5px;
+        flex-direction: column;
+        align-items: flex-end;
   }
 
   header img {
@@ -1013,16 +1018,25 @@ header img {
 
   .headsContainer {
     color: wheat;
-    font-weight: bolder;
-    font-size: 12px;
-    font-family: system-ui;
-    display: flex;
-    flex-direction: row;
-    height: 70%;
-    bottom: 10px;
-    right: 5px;
-    position: relative;
+        font-weight: bolder;
+        font-size: 12px;
+        font-family: system-ui;
+        display: flex;
+        flex-direction: column;
+        height: 70%;
+        top: -18px;
+        right: 20px;
+        position: relative;
   }
+
+  .menu-container {
+    position: relative;
+        display: inline-block;
+        bottom: 13rem;
+        right: 37%;
+        z-index: 2000;
+
+}
 
   .head-btns {
     height: fit-content;
@@ -1106,7 +1120,7 @@ header img {
 
 @media (min-width: 1024px) {
   header {
-    height: 250px;
+    height: 15rem;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -1427,3 +1441,141 @@ header img {
     #d26a03 90%
   );
 } */
+
+/* ===== Responsive Enhancements (additional breakpoints) ===== */
+:root {
+  --header-height-desktop: 250px;
+  --header-height-tablet: 220px;
+  --header-height-mobile: 190px;
+}
+
+/* Small mobile (up to 480px) */
+@media (max-width: 480px) {
+  html, body {
+    overflow: auto;
+  }
+
+  header {
+    height: var(--header-height-mobile);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1200;
+  }
+
+  /* keep map visible below the fixed header */
+  #map {
+    height: calc(100vh - var(--header-height-mobile));
+    margin-top: var(--header-height-mobile);
+  }
+
+  .main-logo {
+    height: auto;
+    width: 12rem;
+}
+
+  #search-container {
+    top: calc(var(--header-height-mobile) + -45px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+  }
+
+  .feedback-btn {
+    bottom: 12px;
+    right: 12px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .leaflet-bar a {
+    width: 28px;
+    height: 28px;
+  }
+
+  .InputContainer {
+    height: 42px;
+  }
+
+  .input {
+    font-size: 13px;
+  }
+
+  .modal-content {
+    width: 94%;
+    max-width: 360px;
+  }
+}
+
+/* Tablet (landscape phones & tablets) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  html, body {
+    overflow: auto;
+  }
+
+  header {
+    height: var(--header-height-tablet);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1200;
+  }
+
+  #map {
+    height: calc(100vh - var(--header-height-tablet));
+    margin-top: var(--header-height-tablet);
+  }
+
+  #search-container {
+    top: calc(var(--header-height-tablet) - 30px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+  }
+
+  .head-btns {
+    top: 5%;
+  }
+
+  .leaflet-bar a {
+    width: 30px;
+    height: 30px;
+  }
+
+  #speed {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Desktop adjustment for map when header is fixed */
+@media (min-width: 1024px) {
+  #map {
+    height: calc(100vh - var(--header-height-desktop));
+    margin-top: var(--header-height-desktop);
+  }
+}
+
+/* Large desktop / TV */
+@media (min-width: 1440px) {
+  header {
+    height: 300px;
+  }
+
+  #map {
+    height: calc(100vh - 300px);
+    margin-top: 300px;
+  }
+
+  .main-logo {
+    width: 32rem;
+  }
+
+  .heads1 {
+    font-size: 32px;
+  }
+}
+
+/* End responsive enhancements */
