@@ -33,6 +33,7 @@ L.tileLayer("../imgs/base.jpg", {
   maxZoom: 20,
   minZoom: 15,
   noWrap: true,
+  dimOutside: true,
 }).addTo(map);
 
 let allFeatures = [];

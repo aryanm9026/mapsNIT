@@ -316,6 +316,7 @@ header img {
 
 .leaflet-control-container {
   z-index: 0;
+  display: none;
 }
 
 .leaflet-bar a {
@@ -1032,7 +1033,7 @@ header img {
   .menu-container {
     position: relative;
         display: inline-block;
-        bottom: 13rem;
+        bottom: 9rem;
         right: 37%;
         z-index: 2000;
 
