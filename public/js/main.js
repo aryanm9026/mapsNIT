@@ -373,6 +373,13 @@ document.querySelectorAll(".btn, .member-link, .social-link").forEach((el) => {
   });
 });
 
+const video = document.getElementById('splash-video');
+const splash = document.getElementById('intro-screen');
+
+video.onended = function() {
+  splash.classList.add('fade-out');
+};
+
 
 // Replace the events modal section in main.js with this:
 
