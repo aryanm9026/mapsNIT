@@ -159,7 +159,7 @@ Promise.all([
   // --- Clustered POIs (default) ---
   clusteredPOIs = L.geoJSON(clustered, {
     pointToLayer: (feature, latlng) =>
-      L.marker(latlng, { icon: getIcon(feature.properties.category) })
+      L.marker(latlng, { icon: getIcon(feature.properties.category,feature.properties.name) })
         .bindPopup(`
           <div class="popup-content">
             <div class="popup-title">${feature.properties.name}</div>
@@ -316,6 +316,7 @@ function goToPOI(poi) {
       `
       <div style="text-align:center;">
         <h3 style="margin:6px 0 4px;">${poi.name}</h3>
+        <p class="popup-desc"><strong>Venue:</strong> ${poi.venue || "N/A"}</p>
         <p class="popup-desc">${poi.description || ""}</p>
         <p><strong>Timings:</strong> ${poi.timings || "-"}</p>
         <button class="navigate-btn" onclick="navigateTo([${poi.coords[1]}, ${
